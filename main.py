@@ -39,12 +39,17 @@ async def on_ready() -> None:
 async def on_message(message: Message) -> None:
     if message.author == client.user:
         return
-
-    username: str = str(message.author)
+    
     user_message: str = message.content
-    channel: str = str(message.channel)
+    
+    # Bot only responds if message starts with "!"
+    if not user_message.startswith("!"):
+        return
+    
+    # Remove "!" before message is processed
+    user_message = user_message[1:]
 
-    print(f'[{channel}] {username}: "{user_message}"')
+    print(f'[{message.channel}] {message.author}: "{user_message}"')
 
 # Call send_message so the bot responds
     await send_message(message, user_message)
