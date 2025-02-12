@@ -6,6 +6,8 @@ def get_response(user_input: str) -> str:
 
     if lowered == '':
         return 'Well, you\'re awfully silent...'
+    elif lowered == 'lepaksg':
+        return 'Hi there! Which town are you planning to lepak?'
     elif 'ang mo kio' in lowered:
         return choice(['Brew & Co.', 'Ang Mo Kio Park', 'AMK Hub'])
     elif 'bedok' in lowered:
@@ -47,7 +49,7 @@ def get_response(user_input: str) -> str:
     elif 'serangoon' in lowered:
         return choice(['Nex', 'Coney Island Park', 'Nim Meadow Park'])
     elif 'tampines' in lowered:
-        return choice(['Tampiness', 'Changi City Point', 'Tampiness Hub'])
+        return choice(['Tampines Mall', 'Changi City Point', 'Tampines Hub'])
     elif 'tengah' in lowered:
         return choice(['Plantation Plaza', 'Garden Vines', 'Le Quest Shopping Mall'])
     elif 'toa payoh' in lowered:
