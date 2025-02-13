@@ -51,7 +51,7 @@ async def on_message(message: Message) -> None:
 
     print(f'[{message.channel}] {message.author}: "{user_message}"')
 
-# Call send_message so the bot responds
+    # Call send_message so the bot responds
     await send_message(message, user_message)
 
 # Main entry point
