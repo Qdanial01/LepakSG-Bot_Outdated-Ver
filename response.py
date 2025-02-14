@@ -8,7 +8,10 @@ Reply_List = [
     "I heard {} is a great place to go!",
     "Maybe try {}? It's a popular choice for some people!",
     "If you're looking for something to just lepak, {} is one of recommended picks!",
-    "{} sounds like a cozy place to just chill!"
+    "{} sounds like a cozy place to just chill!",
+    "I would suggest going to {}!",
+    "{} is a good spot!",
+    "{} is a great place to relax!"
 ]
 
 
@@ -61,5 +64,5 @@ def get_response(user_input: str) -> str:
             message = choice(Reply_List).format(place) # Format with a pre-written reply
             return message
     
-    return choice(["Im not sure where that is, my developer half fuck my code so my process a bit limited.",
+    return choice(["Im not sure where that is, my developer half fuck my code so my process is a bit limited.",
                    "Hmm, I don't have info on that, but let me know if I should add it!"])
