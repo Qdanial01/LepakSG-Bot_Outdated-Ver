@@ -32,7 +32,7 @@ def get_response(user_input: str) -> str:
     'bukit batok': ['Bukit Batok Nature Park', 'Coexist Coffee Co', 'West Mall'],
     'bukit merah': ['Vivo City', 'Henderson Wave', 'Labrador Nature Reserve'],
     'bukit panjang':['Junction 10', 'Bukit Timah Nature Reserve', 'Hillion Mall'],
-    'chao chu kang': ['Lot One', 'SAFRA Bowling', 'Teck Whye Garden'],
+    'choa chu kang': ['Lot One', 'SAFRA Bowling', 'Teck Whye Garden'],
     'clementi': ['Clementi Mall', 'West Coast Park', 'Burnt Cones'],
     'west coast':['Clementi Mall', 'West Coast Park', 'Burnt Cones'],
     'geylang': ['Geylang Serai', 'Joo Chiat Complex', 'Paya Lebar Square', '89.7 Supper Club'],
@@ -54,7 +54,7 @@ def get_response(user_input: str) -> str:
     'yishun': ['Northpoint City', 'Junction Nine', 'Wisteria Mall'],
     'bukit timah': ['Al-Azhar Restaurant', 'Bukit Timah Plaza', 'Atlas Coffeehouse'],
     'marine parade': ['Parkway Parade', 'East Coast Park', 'Cafe Melba'],
-    'Central Area': ['Somerset', 'MBS', 'Funan']
+    'central area': ['Somerset', 'MBS', 'Funan']
     } 
 
     # Check if user input contains any known towns
