@@ -17,22 +17,35 @@ Reply_List = [
 
 
 def get_response(user_input: str) -> str:
-    lowered: str = user_input.lower()
+    lowered: str = user_input.lower().strip()
 
+    # Handle special cases first
     if lowered == "":
-        return 'Well, you\'re awfully quiet....'
-    elif lowered == 'lepaksg':
-        return 'Hi there! Which town are you planning to lepak at?'
+        return "Well, you're awfully silent...."
+    elif lowered == "lepaksg":
+        return "Hi there! Which town are you planning to lepak?"
+
+    words = lowered.split() # Split the input into words
+
+    # Extract town and category (if any input provided)
+    town = words[0] # First word would be the town name
+    category = words[1] if len(words) > 1 else None # Second word would be the category (if any input)
+
+    if town in locations:
+        categories =locations[town] # Retrieve available categories for input town
+
+        # If user input a category, check if category is valid
+        if category and category in categories:
+            place = choice(categories[category]) # Random place is chosen within that specified category
+
+        else:
+            # Pick random category and a place from that category
+            random_category = choice(list(categories.keys())) # A spot is chosen at random depending on the selected town
+            place = choice(categories[random_category])
 
 
-
-    # Check if user input contains any known towns
-    for town, categories in locations.items():
-        if town in lowered:
-            category = choice(list(categories.keys())) # A spot is chosen at random depending on the selected town
-            place = choice(categories[category])
-            message = choice(Reply_List).format(place) # Format with a pre-written reply
-            return message
+        message = choice(Reply_List).format(place) # Format with a pre-written reply
+        return message
     
     return choice(["Im not sure where that is, my developer half fuck my code so my process is a bit limited.",
                    "Hmm, I don't have info on that, but let me know if I should add it!"])

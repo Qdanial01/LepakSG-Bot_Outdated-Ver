@@ -20,14 +20,16 @@ async def send_message(message: Message, user_message: str) -> None:
         print('(Message was empty because intents were not enabled prbably)')
         return
     
-    if is_private := user_message[0] == '?':
+    is_private = user_message.startswith("?") # Check for private message
+    if is_private:
         user_message = user_message[1:]
     
     try:
         response: str= get_response(user_message)
+        print(f"Bot Response: {response}") # Debugging log
         await message.author.send(response) if is_private else await message.channel.send(response)
     except Exception as e:
-        print(e)
+        print(f"Error: {e}")
 
 # Handling the startup for the bot
 @client.event
@@ -56,7 +58,7 @@ async def on_message(message: Message) -> None:
 
 # Main entry point
 def main() -> None:
-    client.run(token=TOKEN)
+    client.run(TOKEN)
 
 if __name__ == '__main__':
     main()
