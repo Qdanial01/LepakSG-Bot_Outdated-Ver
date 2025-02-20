@@ -1,5 +1,10 @@
 from random import choice
-from locations import locations # Import dictionary from locations.py
+import json
+
+# Load JSON data from locations.json
+# "r" opens in read mode
+with open("locations.json", "r", encoding="utf=8") as file:
+    locations = json.load(file)
 
 # Pre-generated message list
 Reply_List = [
