@@ -29,6 +29,8 @@ def get_response(user_input: str) -> str:
         return "Well, you're awfully silent...."
     elif lowered == "lepaksg":
         return "Hi there! Which town are you planning to lepak?"
+    elif lowered == "help":
+        return "Enter '!' followed by the town you wish to get reccommendations for. E.g.: !bedok"
 
     words = lowered.split() # Split the input into words
 
