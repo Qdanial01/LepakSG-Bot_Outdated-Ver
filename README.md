@@ -10,10 +10,9 @@
 
 ### Prerequisites
 - Python 3.8 or later (if using 3.12 or newer imported to use nextcord instead of discord)
-- 'pip' installed
 
 ### Setup
-If you wish to make the same bot follow these steps
+If you wish to make the same bot and use the codes here as the base you can clone it:
 
 1. **Clone the repository:**  
    ```sh
